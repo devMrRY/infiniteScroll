@@ -1,0 +1,122 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+#home {
+  background: linear-gradient(to right, rgb(203, 52, 181), rgb(68, 166, 187));
+  min-height: 100vh;
+}
+
+.postItem {
+  background: rgba(0, 0, 0, 0.7);
+  background-size: cover;
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: 5px 8px rgba(0, 0, 0, 0.3);
+  animation-name: ghost;
+  animation-duration: 1s;
+  perspective: 100px;
+}
+
+#title {
+  font-size: x-large;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: cyan;
+  text-shadow: 3px 2px #4d6e6a;
+}
+#body {
+  color: whitesmoke;
+}
+
+@keyframes ghost {
+  from {
+    opacity: 0;
+    transform: rotateX(-90deg);
+    transition: all 0.5s cubic-bezier(0.36, -0.64, 0.34, 1.76);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    transition: all 0.5s cubic-bezier(0.36, -0.64, 0.34, 1.76);
+  }
+}
+
+#searchBox {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  margin-top: 5px;
+  z-index: 99;
+}
+#searchBar {
+  width: 0px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  line-height: 30px;
+  background: transparent;
+}
+#searchBox:hover > #searchBar {
+  width: 87%;
+  padding: 5px;
+  color: cyan;
+  border-radius: 25px;
+  background: #2f3640;
+  transition: all 0.5s;
+}
+
+#searchBar:focus ~ #searchBtn {
+  background: #2f3640;
+}
+#searchBox:hover > #searchBtn {
+  background: #2f3640;
+}
+
+#searchBar:focus {
+  width: 87%;
+  color: cyan;
+  background: #2f3640;
+  border-radius: 25px;
+}
+
+#searchBox:focus-within {
+  color: cyan;
+  background: #2f3640;
+  border-radius: 25px;
+}
+
+#searchBox:hover {
+  background: #2f3640;
+  border-radius: 25px;
+  transition: all 0.5s;
+}
+
+#searchBar::placeholder {
+  color: white;
+}
+#searchBtn {
+  border-radius: 50%;
+  padding: 10px;
+  color: #e84118;
+  font-size: large;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  outline: none;
+}
+.container {
+  margin-top: 50px;
+  /* max-height: 92vh;
+  overflow: scroll; */
+}
+.postList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#body {
+  font-size: larger;
+}
